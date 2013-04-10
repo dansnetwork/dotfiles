@@ -1,7 +1,9 @@
 set nocompatible
+syntax enable
 
 set antialias
 set tabstop=4
+set shiftwidth=4
 set nowrap
 
 call pathogen#infect()
@@ -18,9 +20,13 @@ set incsearch
 
 set nobackup
 set noswapfile
+
 set foldcolumn=2
 set foldmethod=indent
 set foldnestmax=2
+
+"auto load changed files
+set autoread
 
 let mapleader=','
 let maplocalleader=','
@@ -56,18 +62,24 @@ function! Tab_Or_Complete()
 endfunction
 :inoremap <Leader><Tab> <C-R>=Tab_Or_Complete()<CR>
 
-filetype on
-filetype plugin on
-"filtype plugin indent on
-"let g:snippets_dir='~/.vim/bundle/snipmate.vim/snippets'
+filetype plugin indent on
 
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set guifont=Menlo\ for\ Powerline:h12
 
-"Powerline
-"let g:Powerline_symbols='fancy'
+if has("gui_macvim")
 
-"colorscheme molokai 
-"syntax enable
-"set background=dark
-"colorscheme solarized
+	"Splice Settings
+	let g:splice_prefix=','
+	let g:splice_initial_scrollbind_grid=1
+	let g:splice_initial_diff_grid=1
 
+	set background=dark
+	colorscheme solarized
+endif
+
+if has("autocmd")
+  au  BufNewFile,BufRead *.stache set syntax=html
+  au  BufNewFile,BufRead *.less set syntax=css
+  au  BufNewFile,BufRead *.test set syntax=js
+endif
