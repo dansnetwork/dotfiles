@@ -1,5 +1,5 @@
 set nocompatible
-set transparency=5
+"set transparency=5
 
 set antialias
 set tabstop=4
@@ -7,7 +7,7 @@ set shiftwidth=4
 set nowrap
 
 call pathogen#infect()
-syntax on
+"syntax on
 filetype plugin indent on
 
 set cursorline
@@ -29,6 +29,7 @@ set autoread
 if has("autocmd")
   au  BufNewFile,BufRead *.stache set syntax=html
   au  BufNewFile,BufRead *.less set syntax=css
+  au  BufNewFile,BufRead *.test set syntax=js
 endif
 
 "set foldcolumn=2
@@ -46,5 +47,16 @@ inoremap ;; <esc>
 
 
 "colorscheme molokai 
-colorscheme vividchalk
+"colorscheme vividchalk
 
+"Splice Settings
+let g:splice_prefix=','
+let g:splice_initial_scrollbind_grid=1
+let g:splice_initial_diff_grid=1
+
+"let mapleader=","
+"let maplocalleader=","
+syntax enable
+set background=dark
+colorscheme solarized
+set guifont=Menlo\ for\ Powerline:h12
