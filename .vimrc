@@ -52,6 +52,9 @@ nnoremap ** :Ack <c-r><c-w> --
 
 nnoremap <leader>a :Ack 
 
+" put multiple times when in visual mode
+vnoremap p "0p 
+
 " use <Leader><Tab> to complete words (same as <C-n>)
 function! Tab_Or_Complete()
 	if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'

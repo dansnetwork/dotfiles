@@ -1,0 +1,17 @@
+--type-set
+stache=.stache
+
+--type-set
+test=.test
+
+--type-set
+less=.less
+
+--type-set
+json=.json
+
+--type-set
+front=.js,.css,.stache,.less
+
+--type-set
+back=.php
