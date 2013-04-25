@@ -1,0 +1,30 @@
+[ui]
+username=Dan Kielp <dan@sproutsocial.com>
+verbose = True
+#merge = vimdiff
+merge = splice
+
+[hooks]
+preoutgoing.validate=[ ! -e "Gruntfile.js" ] || grunt validate
+
+[merge-tools]
+vimdiff.executable = vim
+# 2 pane diff
+#vimdiff.args = -d $base $local $output $other +close +close
+# 4 pane
+vimdiff.premerge = keep
+vimdiff.args = -d -c "wincmd J" "$output" "$local" "$other" "$base"
+
+splice.executable = mvim
+splice.args = -f $base $local $other $output -c 'SpliceInit'
+splice.premerge = keep
+splice.priority = 1
+
+#[extdiff]
+#cmd.vdiff = vimdiff
+
+[extensions]
+fetch = 
+#hgext.extdiff =
+graphlog =
+mq =
