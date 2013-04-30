@@ -84,5 +84,18 @@ endif
 if has("autocmd")
   au  BufNewFile,BufRead *.stache set syntax=html
   au  BufNewFile,BufRead *.less set syntax=css
-  au  BufNewFile,BufRead *.test set syntax=js
+  au  BufNewFile,BufRead *.test set syntax=javascript
 endif
+
+" plugin list
+" - ack
+" - delimitMate
+" - nerdtree
+" - powerline
+" - snipmate
+" - splice
+" - tcomment_vim
+" - vim-colors-solarized
+" - vim-fuzzyfinder
+" - vim-l9
+" - vim-surround
